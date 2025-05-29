@@ -6,7 +6,6 @@ const audioSource = document.getElementById('audioSource');
 const tracks = {
   1: 'audio/track1.m4a',
   2: 'audio/track2.m4a',
-  3: 'track3.mp3',
 };
 
 function print(text) {
