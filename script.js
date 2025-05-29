@@ -45,15 +45,12 @@ function processCommand(cmd) {
   }
       break;
       
-    case 'pause':
-      if (!player.paused) {
-        player.pause();
-        print("Пауза.");
-      } else {
-        print("Трек уже на паузе.");
-      }
+case 'stop':
+      player.pause();
+      player.currentTime = 0;
+      print("Воспроизведение остановлено.");
       break;
-
+      
     case 'donate':
       print("Поддержать проект:\n  Patreon: https://patreon.com/yourpage");
       break;
