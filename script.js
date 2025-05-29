@@ -19,7 +19,7 @@ function processCommand(cmd) {
 
   switch (command) {
     case 'help':
-      print("Команды:\n  ls — список треков\n  play [номер] — включить трек\n  pause — пауза\n  stop — остановить\n  donate — поддержать улей\n  clear — очистить\n  exit — выход");
+      print("Команды:\n  ls — список треков\n  play [номер] — включить трек\n  stop — остановить\n  donate — поддержать улей\n  clear — очистить\n  exit — выход");
       break;
       
     case 'ls':
@@ -54,12 +54,6 @@ function processCommand(cmd) {
       }
       break;
 
-    case 'stop':
-      player.pause();
-      player.currentTime = 0;
-      print("Воспроизведение остановлено.");
-      break;
-      break;
     case 'donate':
       print("Поддержать проект:\n  Boosty: https://boosty.to/yourpage\n  Patreon: https://patreon.com/yourpage");
       break;
