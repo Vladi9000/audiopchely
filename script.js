@@ -29,16 +29,20 @@ function processCommand(cmd) {
       }
       break;
     case 'play':
-      const n = args[1];
-      if (tracks[n]) {
-        audioSource.src = tracks[n];
-        player.load();
-        player.play();
-        print(`Воспроизводится трек ${n}`);
-      } else {
-        print("Трек не найден.");
-      }
-      break;
+  if (!args[1]) {
+    print("Пожалуйста, укажите номер трека. Например: play 1");
+    break;
+  }
+  const n = args[1];
+  if (tracks[n]) {
+    audioSource.src = tracks[n];
+    player.load();
+    player.play();
+    print(`Воспроизводится трек ${n}`);
+  } else {
+    print("Трек не найден.");
+  }
+  break;
     case 'donate':
       print("Поддержать проект:\n  Boosty: https://boosty.to/yourpage\n  Patreon: https://patreon.com/yourpage");
       break;
