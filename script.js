@@ -63,5 +63,6 @@ input.addEventListener('keydown', (e) => {
     print('> ' + cmd);
     processCommand(cmd);
     input.value = '';
+    input.focus();
   }
 });
