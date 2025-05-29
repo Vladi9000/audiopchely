@@ -1,3 +1,11 @@
 TXT
 \n  Boosty: https://boosty.to/yourpage
 <a href="https://boosty.to/yourpage" target="_blank">Boosty</a> |
+ case 'pause':
+      if (!player.paused) {
+        player.pause();
+        print("Пауза.");
+      } else {
+        print("Трек уже на паузе.");
+      }
+      break;
