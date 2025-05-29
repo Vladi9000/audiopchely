@@ -4,8 +4,8 @@ const player = document.getElementById('player');
 const audioSource = document.getElementById('audioSource');
 
 const tracks = {
-  1: 'track1.mp3',
-  2: 'track2.mp3',
+  1: 'audio/track1.m4a',
+  2: 'audio/track2.m4a',
   3: 'track3.mp3',
 };
 
