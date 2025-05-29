@@ -1,0 +1,63 @@
+const output = document.getElementById('output');
+const input = document.getElementById('command');
+const player = document.getElementById('player');
+const audioSource = document.getElementById('audioSource');
+
+const tracks = {
+  1: 'track1.mp3',
+  2: 'track2.mp3',
+  3: 'track3.mp3',
+};
+
+function print(text) {
+  output.textContent += '\n' + text;
+  output.scrollTop = output.scrollHeight;
+}
+
+function processCommand(cmd) {
+  const args = cmd.trim().split(' ');
+  const command = args[0];
+
+  switch (command) {
+    case 'help':
+      print("Команды:\n  ls — список треков\n  play [номер] — включить трек\n  donate — поддержать улей\n  clear — очистить\n  exit — выход");
+      break;
+    case 'ls':
+      print("Треки:");
+      for (const id in tracks) {
+        print(`  ${id}: ${tracks[id]}`);
+      }
+      break;
+    case 'play':
+      const n = args[1];
+      if (tracks[n]) {
+        audioSource.src = tracks[n];
+        player.load();
+        player.play();
+        print(`Воспроизводится трек ${n}`);
+      } else {
+        print("Трек не найден.");
+      }
+      break;
+    case 'donate':
+      print("Поддержать проект:\n  Boosty: https://boosty.to/yourpage\n  Patreon: https://patreon.com/yourpage");
+      break;
+    case 'clear':
+      output.textContent = '';
+      break;
+    case 'exit':
+      print("Чтобы закрыть вкладку, используйте Ctrl+W или нажмите на крестик.");
+      break;
+    default:
+      print("Неизвестная команда. Введите 'help'.");
+  }
+}
+
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    const cmd = input.value;
+    print('> ' + cmd);
+    processCommand(cmd);
+    input.value = '';
+  }
+});

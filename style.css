@@ -1,0 +1,44 @@
+body {
+  background: black;
+  color: #00ff00;
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+.banner {
+  background: #111;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+}
+.banner a {
+  color: #00ff00;
+  margin: 0 10px;
+  text-decoration: underline;
+}
+.terminal {
+  padding: 20px;
+}
+#output {
+  white-space: pre-wrap;
+  min-height: 300px;
+}
+.input-line {
+  display: flex;
+  align-items: center;
+}
+input {
+  background: black;
+  color: #00ff00;
+  border: none;
+  outline: none;
+  font: inherit;
+  width: 100%;
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
