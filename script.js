@@ -55,7 +55,7 @@ function processCommand(cmd) {
       break;
 
     case 'donate':
-      print("Поддержать проект:\n  Boosty: https://boosty.to/yourpage\n  Patreon: https://patreon.com/yourpage");
+      print("Поддержать проект:\n  Patreon: https://patreon.com/yourpage");
       break;
     case 'clear':
       output.textContent = '';
