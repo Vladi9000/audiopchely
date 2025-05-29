@@ -41,7 +41,21 @@ function processCommand(cmd) {
   } else {
     print("Трек не найден.");
   }
-  break;
+    case 'pause':
+      if (!player.paused) {
+        player.pause();
+        print("Пауза.");
+      } else {
+        print("Трек уже на паузе.");
+      }
+      break;
+
+    case 'stop':
+      player.pause();
+      player.currentTime = 0;
+      print("Воспроизведение остановлено.");
+      break;
+      break;
     case 'donate':
       print("Поддержать проект:\n  Boosty: https://boosty.to/yourpage\n  Patreon: https://patreon.com/yourpage");
       break;
