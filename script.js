@@ -19,14 +19,16 @@ function processCommand(cmd) {
 
   switch (command) {
     case 'help':
-      print("Команды:\n  ls — список треков\n  play [номер] — включить трек\n  donate — поддержать улей\n  clear — очистить\n  exit — выход");
+      print("Команды:\n  ls — список треков\n  play [номер] — включить трек\n  pause — пауза\n  stop — остановить\n  donate — поддержать улей\n  clear — очистить\n  exit — выход");
       break;
+      
     case 'ls':
       print("Треки:");
       for (const id in tracks) {
         print(`  ${id}: ${tracks[id]}`);
       }
       break;
+      
     case 'play':
   if (!args[1]) {
     print("Пожалуйста, укажите номер трека. Например: play 1");
@@ -41,6 +43,8 @@ function processCommand(cmd) {
   } else {
     print("Трек не найден.");
   }
+      break;
+      
     case 'pause':
       if (!player.paused) {
         player.pause();
