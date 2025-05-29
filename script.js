@@ -55,8 +55,8 @@ case 'stop':
       print("Поддержать проект:\n  Patreon: https://patreon.com/yourpage");
       break;
     case 'clear':
-      output.textContent = '';
-      break;
+  output.textContent = "Welcome to audiopchely.\nType 'help' to get started.";
+  break;
     case 'exit':
       print("Чтобы закрыть вкладку, используйте Ctrl+W или нажмите на крестик.");
       break;
