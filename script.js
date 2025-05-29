@@ -19,7 +19,7 @@ function processCommand(cmd) {
 
   switch (command) {
     case 'help':
-      print("Команды:\n  ls — список треков\n  play [номер] — включить трек\n  stop — остановить\n  donate — поддержать улей\n  clear — очистить\n  exit — выход");
+      print("Команды:\n  ls — список треков\n  play [номер] — включить трек\n  stop — остановить\n  donate — поддержать улей\n  clear — очистить\n  exit — выход\n  loop on/off — включить или выключить повтор трека");
       break;
       
     case 'ls':
@@ -57,6 +57,17 @@ case 'stop':
     case 'clear':
   output.textContent = "Welcome to audiopchely.\nType 'help' to get started.";
   break;
+          case 'loop':
+      if (args[1] === 'on') {
+        player.loop = true;
+        print("Повтор включён.");
+      } else if (args[1] === 'off') {
+        player.loop = false;
+        print("Повтор выключён.");
+      } else {
+        print("Используйте: loop on — для включения повтора, loop off — для выключения.");
+      }
+      break;
     case 'exit':
       print("Чтобы закрыть вкладку, используйте Ctrl+W или нажмите на крестик.");
       break;
